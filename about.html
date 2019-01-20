@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SENJA MASKIN AS - OM OSS</title>
+    <!-- STYLE -->
+    <link rel="stylesheet" href="alertifyjs/css/alertify.css">
+    <link rel="stylesheet" href="alertifyjs/css/themes/default.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- SCRIPT -->
+    <script src="alertifyjs/alertify.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header class="nav">
+        <h1  class="nav__logo"><a href="index.html" title="SENJA MASKIN AS Logo. Visjon: Vi Flytter Fjell. Trykk for å gå til hjemmesiden."></a></h1>
+        <label for="toggle">&#9776;</label>
+        <input type="checkbox" id="toggle"/>
+        <div class="nav__links">
+            <a href="index.html" title="Trykk for å gå til hjemmesiden.">HJEM</a>
+            <a href="about.html" title="Trykk for å gå til Om Oss siden.">OM OSS</a>
+            <a href="contact.html" title="Trykk for å gå til Kontakt Oss siden.">KONTAKT OSS</a>
+            <a href="maskinpark.html" title="Trykk for å gå til Maskinpark siden.">MASKINPARK</a>
+        </div>
+    </header>
+    <main class="main">
+        <div class="fas fa-cog main__cog"></div>
+        <div class="main__warning">Velkommen!</div>
+        <div class="main__message">Siden er under utvikling.</div>
+    </main>
+    <footer class="footer">
+        <div class="footer__links">
+            <a href="index.html" title="Trykk for å gå til hjemmesiden.">HJEM</a>
+            <a href="about.html" title="Trykk for å gå til Om Oss siden.">OM OSS</a>
+            <a href="contact.html" title="Trykk for å gå til Kontakt Oss siden.">KONTAKT OSS</a>
+            <a href="maskinpark.html" title="Trykk for å gå til Maskinpark siden.">MASKINPARK</a>
+        </div>
+        <div class="footer__social-media">
+            <a href="#" class="fab fa-facebook" title="Trykk for å gå til Facebook siden."></a>
+        </div>
+        <div class="footer__contact">
+            <span class="fas fa-phone footer__contact__icon"></span>
+            <span class="footer__contact__content --phone" onclick="checkWidth(), alertify.notify('Telefon nummer kopiert!'), copyPhone()" title="Trykk for å kopiere tekst.">+47 00 00 00 00</span>
+            <span class="fas fa-envelope footer__contact__icon"></span>
+            <span class="footer__contact__content --mail"  onclick="checkWidth(), alertify.notify('E-post kopiert!'), copyMail()" title="Trykk for å kopiere tekst.">kontakt@senjamaskin.no</span>
+        </div>
+        <div class="footer__copy">Senja Maskin AS &copy; 2019</div>
+    </footer>
+</body>
+
+</html>
