@@ -14,6 +14,7 @@ html {
     --gray1: #eee;
     --gray2: #aaa;
     --gray3: #707070;
+    --gray4: #333333;
 }
 html, body {
     width: 100%;
@@ -22,7 +23,7 @@ html, body {
     color: var(--black);
     background: var(--gray3);
 }
-h1 {
+h1, h2 {
     margin: 0;
     padding: 0;
 }
@@ -139,6 +140,45 @@ label {
     background-repeat: no-repeat;
     background-position: center 0%;
 }
+.main-home__cta-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    padding: 5rem 1rem;
+    text-align: center;
+}
+.main-home__cta-container__box {
+    width: 100%;
+    max-width: 32rem;
+    min-height: 36rem;
+    background: white;
+    border-radius: 5px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: space-around;
+    padding: 1rem;
+
+    box-shadow: 0 .5rem 1rem var(--gray4);
+}
+.main-home__cta-container__box__header {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.main-home__cta-container__box__content {
+    font-size: 1.5rem;
+}
+.main-home__cta-container__box__cta a {
+    color: var(--red);
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.main-home__cta-container__box__cta a:hover {
+    color: var(--black);
+}
 
 /* MAIN - ABOUT STYLES */
 
@@ -152,7 +192,7 @@ label {
 
 
 
-/* DESKTOP STYLES */
+/* SMALL DESKTOP STYLES */
 
 @media (max-width: 80rem) {
     
@@ -175,6 +215,10 @@ label {
 
     .main-home__img{
         height: 80vh;
+    }
+    .main-home__cta-container {
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
     }
 
     /* MAIN - ABOUT STYLES */
@@ -299,8 +343,17 @@ label {
     /* MAIN - HOME STYLES */
 
     .main-home__img {
-        height: 80vh;
+        height: 36rem;
         background-position-x: -160px;
+    }
+    .main-home__cta-container {
+        padding-top: 2rem;
+    }
+    .main-home__cta-container__box {
+        min-height: 25rem;
+    }
+    .main-home__cta-container__box__content {
+        font-size: 1rem;
     }
 
     /* MAIN - ABOUT STYLES */
@@ -311,6 +364,36 @@ label {
 
 
 
+    /* MAIN - MASKINPARK STYLES */
+
+
+
+}
+
+@media (max-width: 20rem) {
+    
+    /* HEADER STYLES*/
+
+
+
+    /* FOOTER STYLES */
+    
+    
+    
+    /* MAIN - HOME STYLES */
+    
+    .main-home__img {
+        height: 30rem;
+    }
+    
+    /* MAIN - ABOUT STYLES */
+    
+    
+    
+    /* MAIN - CONTACT STYLES */
+    
+    
+    
     /* MAIN - MASKINPARK STYLES */
 
 
