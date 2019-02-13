@@ -29,11 +29,47 @@
             <a href="maskinpark.html" title="Trykk for å gå til Maskinpark siden.">MASKINPARK</a>
         </div>
     </header>
-    <main class="main">
-        <div class="fas fa-cog main__cog"></div>
-        <div class="main__warning">Velkommen!</div>
-        <div class="main__message">Siden er under utvikling.</div>
+    <main class="main-contact">
+        <div class="main-contact__container">
+            <h2 class="main-contact__container__header">Kontakt Oss</h2>
+            <form class="main-contact__container__form contact-form" method="POST">
+                <div class="contact-form__invalid contact-form__invalid--name">error</div>
+                <input type="text" name="name" placeholder="Navn..." class="contact-form__input" id="input-name"/>
+                <div class="contact-form__invalid contact-form__invalid--email">error</div>
+                <input type="text" name="email" placeholder="E-post..." class="contact-form__input" id="input-email"/>
+                <div class="contact-form__invalid contact-form__invalid--phone">error</div>
+                <input type="text" name="phone" placeholder="Telefon... (00000000)" class="contact-form__input" id="input-phone"/>
+                <div class="contact-form__invalid contact-form__invalid--message">error</div>
+                <textarea type="text" name="message" placeholder="Melding..." class="contact-form__input contact-form__input--message" id="input-message"></textarea>
+                <button id="form-submit" type="button" class="contact-form__continue" onclick="
+                checkValidation()">
+                    Fortsett
+                </button>
+            </form>
+            <a class="main-contact__container__social-media">Finn oss på Facebook.<span class="fab fa-facebook"></span></a>
+            <div class="main-contact__container__contact contact-container">
+                <span class="fas fa-phone contact-container__icon contact-container__icon--phone"></span>
+                <span class="contact-container__box contact-container__box--phone" onclick="checkWidth(), alertify.notify('Mobilnummer kopiert!'), copyPhone()" title="Trykk for å kopiere tekst.">+47 00 00 00 00</span>
+                <span class="fas fa-envelope contact-container__icon contact-container__icon--mail"></span>
+                <span class="contact-container__box contact-container__box--mail"  onclick="checkWidth(), alertify.notify('E-post kopiert!'), copyMail()" title="Trykk for å kopiere tekst.">kontakt@senjamaskin.no</span>
+            </div>
+        </div>
     </main>
+    <section class="modal">
+        <button class="modal__exit" onclick="closeModal()">&#215;</button>
+        <div class="modal__container">
+            <div class="modal__container__header">Nesten der! Sjekk at informasjonen stemmer og trykk på send.</div>
+            <div class="modal__container__title">Navn:</div>
+            <div class="modal__container__input">input</div>
+            <div class="modal__container__title">E-post:</div>
+            <div class="modal__container__input">input</div>
+            <div class="modal__container__title">Mobilnummer:</div>
+            <div class="modal__container__input">input</div>
+            <div class="modal__container__title">Melding:</div>
+            <div class="modal__container__input">input</div>
+            <button type="button" class="modal__container__button">Send</button>
+        </div>
+    </section>
     <footer class="footer">
         <div class="footer__links">
             <a href="index.html" title="Trykk for å gå til hjemmesiden.">HJEM</a>
@@ -46,7 +82,7 @@
         </div>
         <div class="footer__contact">
             <span class="fas fa-phone footer__contact__icon"></span>
-            <span class="footer__contact__content --phone" onclick="checkWidth(), alertify.notify('Telefon nummer kopiert!'), copyPhone()" title="Trykk for å kopiere tekst.">+47 00 00 00 00</span>
+            <span class="footer__contact__content --phone" onclick="checkWidth(), alertify.notify('Mobilnummer kopiert!'), copyPhone()" title="Trykk for å kopiere tekst.">+47 00 00 00 00</span>
             <span class="fas fa-envelope footer__contact__icon"></span>
             <span class="footer__contact__content --mail"  onclick="checkWidth(), alertify.notify('E-post kopiert!'), copyMail()" title="Trykk for å kopiere tekst.">kontakt@senjamaskin.no</span>
         </div>
