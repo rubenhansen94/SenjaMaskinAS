@@ -29,10 +29,18 @@
             <a href="maskinpark.html" title="Trykk for å gå til Maskinpark siden.">MASKINPARK</a>
         </div>
     </header>
-    <main class="main">
-        <div class="fas fa-cog main__cog"></div>
-        <div class="main__warning">Velkommen!</div>
-        <div class="main__message">Siden er under utvikling.</div>
+    <main class="main-about">
+        <div class="main-about__img"></div>
+        <div class="main-about__content">
+            <h2 class="main-about__content__header">Om Oss</h2>
+            <div class="main-about__content__container">
+                <div class="main-about__content__container__box">Informasjon om firmaet.<br />
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, ipsum?</div>
+                <div class="main-about__content__container__box">Informasjon om boring og sprengning.<br />
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, sint!</div>
+                <div class="main-about__content__container__box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, blanditiis!</div>
+            </div>
+        </div>
     </main>
     <footer class="footer">
         <div class="footer__links">
@@ -46,7 +54,7 @@
         </div>
         <div class="footer__contact">
             <span class="fas fa-phone footer__contact__icon"></span>
-            <span class="footer__contact__content --phone" onclick="checkWidth(), alertify.notify('Telefon nummer kopiert!'), copyPhone()" title="Trykk for å kopiere tekst.">+47 00 00 00 00</span>
+            <span class="footer__contact__content --phone" onclick="checkWidth(), alertify.notify('Mobilnummer kopiert!'), copyPhone()" title="Trykk for å kopiere tekst.">+47 00 00 00 00</span>
             <span class="fas fa-envelope footer__contact__icon"></span>
             <span class="footer__contact__content --mail"  onclick="checkWidth(), alertify.notify('E-post kopiert!'), copyMail()" title="Trykk for å kopiere tekst.">kontakt@senjamaskin.no</span>
         </div>
