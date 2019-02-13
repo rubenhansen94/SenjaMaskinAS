@@ -182,11 +182,203 @@ label {
 
 /* MAIN - ABOUT STYLES */
 
-
+.main-about__img {
+    background-image: url(images/IMG-0973.JPG);
+    height: 85vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+}
+.main-about__content {
+    margin: 3rem auto;
+    text-align: center;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 .5rem 1rem var(--gray4);
+    min-height: 30rem;
+    max-width: 95vw;
+}
+.main-about__content__header {
+    font-size: 2rem;
+    padding: 2rem;
+}
+.main-about__content__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    height: 100%;
+    width: 100%;
+    justify-items: center;
+    text-align: start;
+    padding: 3rem 2rem;
+}
 
 /* MAIN - CONTACT STYLES */
 
+.main-contact__container {
+    background: white;
+    margin: 3rem 1rem;
+    padding: 1rem 1rem 2rem;
+    border-radius: 5px;
+    min-height: 30.5rem;
+    box-shadow: 0 .5rem 1rem var(--gray4);
+    text-align: center;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "hd hd hd"
+        "form sm contact"
+}
+.main-contact__container__header {
+    grid-area: hd;
+    font-size: 2rem;
+    padding: 2rem;
+}
+.main-contact__container__form {
+    grid-area: form;
+}
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 30rem;
+    width: 100%;
+    align-content: center;
+    justify-self: center;
+}
+.contact-form__invalid {
+    display: none;
+    text-align: start;
+    color: var(--red);
+    padding-left: 0.75rem;
+}
+.contact-form__input {
+    display: block;
+    border: 1px solid var(--black);
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 100%;
+    margin: .5rem auto;
+    font-size: 1rem;
+}
+.contact-form__input--message {
+    resize: none;
+    height: 5rem;
+}
+.contact-form__continue {
+    justify-self: end;
+    background: var(--black);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+}
+.main-contact__container__social-media {
+    grid-area: sm;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+.main-contact__container__social-media span {
+    font-size: 5rem;
+    margin-top: 2rem;
+}
+.main-contact__container__contact {
+    grid-area: contact;
+}
+.contact-container {
+    display: grid;
+    grid-gap: 1rem;
+    grid-row-gap: 3rem;
+    grid-template-areas:
+        "phone-icon phone-number"
+        "mail-icon mail-adress"
+}
+.contact-container__icon {
+    font-size: 2rem;
+}
+.contact-container__icon--phone {
+    grid-area: phone-icon;
+}
+.contact-container__icon--mail {
+    grid-area: mail-icon;
+}
+.contact-container__box {
+    font-size: 1.5rem;
+}
+.contact-container__box--phone {
+    grid-area: phone-number;
+}
+.contact-container__box--mail {
+    grid-area: mail-adress;
+}
 
+/* CONTACT MODAL */
+
+.modal {
+    display: none;
+    background: rgba(90, 90, 90, .5);
+    overflow: auto;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+.modal__exit {
+    color: white;
+    background: rgba(0,0,0, 0);
+    border: none;
+    padding: 0 1.5rem;
+    font-size: 3rem;
+    float: right;
+}
+.modal__exit:hover, .modal__exit:focus {
+    color: var(--black);
+    cursor: pointer;
+}
+.modal__container {
+    margin: 10% auto;
+    background: white;
+    box-shadow: 0 .5rem 1rem var(--gray4);
+    border-radius: 5px;
+    padding: 2rem;
+    width: 70%;
+    overflow: auto;
+}
+.modal__container__header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.modal__container__title {
+    font-weight: bold;
+    padding: .5rem 1rem;
+}
+.modal__container__input {
+    background: var(--gray1);
+    padding: 1rem;
+    border-radius: 5px;
+}
+.modal__container__button {
+    background: var(--black);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: .5rem 1rem;
+    margin: .5rem 0;
+    float: right;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.modal__container__button--middle {
+    float: none;
+}
 
 /* MAIN - MASKINPARK STYLES */
 
@@ -213,7 +405,7 @@ label {
 
     /* MAIN - HOME STYLES */
 
-    .main-home__img{
+    .main-home__img {
         height: 80vh;
     }
     .main-home__cta-container {
@@ -223,11 +415,16 @@ label {
 
     /* MAIN - ABOUT STYLES */
 
-
+    .main-about__img {
+        height: 80vh;
+        background-position: center 50%;
+    }
 
     /* MAIN - CONTACT STYLES */
 
-
+    .main-contact__container {
+        min-height: auto;
+    }
 
     /* MAIN - MASKINPARK STYLES */
 
@@ -288,14 +485,45 @@ label {
     .main-home__img {
         height: 50vh;
     }
+    .main-about__content__container {
+        grid-template-columns: 1fr;
+        justify-items: start;
+        max-width: 30rem;
+        margin: 0 auto;
+        grid-row-gap: 3rem;
+    }
 
     /* MAIN - ABOUT STYLES */
 
-
+    .main-about__img {
+        background-position: 75% 50%;
+    }
 
     /* MAIN - CONTACT STYLES */
 
+    .main-contact__container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "hd hd"
+            "form form"
+            "sm contact"
 
+    }
+    .contact-form {
+        margin-bottom: 2rem;
+    }
+    .contact-container__box {
+        font-size: 1rem;
+    }
+    .contact-container {
+        grid-row-gap: 2rem;
+    }
+
+    /* MODAL */
+
+    .modal__container {
+        width: 90%;
+    }
 
     /* MAIN - MASKINPARK STYLES */
 
@@ -362,7 +590,20 @@ label {
 
     /* MAIN - CONTACT STYLES */
 
-
+    .main-contact__container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "hd"
+            "form"
+            "contact"
+            "sm"
+    }
+    .main-contact__container__social-media {
+        margin-top: 2rem;
+    }
+    .main-contact__container__social-media span {
+        margin-top: 1rem;
+    }
 
     /* MAIN - MASKINPARK STYLES */
 
