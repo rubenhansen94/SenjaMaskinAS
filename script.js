@@ -121,12 +121,19 @@ function checkValidation() {
     // make modal visible
 
     if (check1 && check2 && check3 && check4) {
-        writeModal();
+        submitForm();
+        successMessage();
+        //writeModal();
         if (modal.style.display === 'none' || modal.style.display === '') {
             modal.style.display = 'block';
         }
     }
 
+}
+
+function submitForm() {
+    var contactForm = document.querySelector('contact-form');
+    contactForm.submit();
 }
 
 function writeModal() {

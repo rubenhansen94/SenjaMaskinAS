@@ -13,8 +13,29 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- SCRIPT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
     <script src="alertifyjs/alertify.js" defer></script>
     <script src="script.js" defer></script>
+    <script>
+        // form handeling
+        $(document).ready(function() {
+            $("form").submit(function(event) {
+                event.preventDefault();
+                var name = $("#input-name").val();
+                var email = $("#input-email").val();
+                var phone = $("#input-phone").val();
+                var message = $("#input-message").val();
+                var submit = $("#form-submit").val();
+                $(".form-message").load("mail.php", {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    message: message,
+                    submit: submit 
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -32,15 +53,12 @@
     <main class="main-contact">
         <div class="main-contact__container">
             <h2 class="main-contact__container__header">Kontakt Oss</h2>
-            <form class="main-contact__container__form contact-form" method="POST">
-                <div class="contact-form__invalid contact-form__invalid--name">error</div>
-                <input type="text" name="name" placeholder="Navn..." class="contact-form__input" id="input-name"/>
-                <div class="contact-form__invalid contact-form__invalid--email">error</div>
-                <input type="text" name="email" placeholder="E-post..." class="contact-form__input" id="input-email"/>
-                <div class="contact-form__invalid contact-form__invalid--phone">error</div>
-                <input type="text" name="phone" placeholder="Telefon... (00000000)" class="contact-form__input" id="input-phone"/>
-                <div class="contact-form__invalid contact-form__invalid--message">error</div>
-                <textarea type="text" name="message" placeholder="Melding..." class="contact-form__input contact-form__input--message" id="input-message"></textarea>
+            <form class="main-contact__container__form contact-form" method="POST" action="mail.php">
+                <p class="contact-form__error">Input</p>
+                <input type="text" name="name" placeholder="Navn" class="contact-form__input input-error" id="input-name"/>
+                <input type="text" name="email" placeholder="E-post" class="contact-form__input" id="input-email"/>
+                <input type="text" name="phone" placeholder="Telefon (00000000)" class="contact-form__input" id="input-phone"/>
+                <textarea type="text" name="message" placeholder="Melding" class="contact-form__input contact-form__input--message" id="input-message"></textarea>
                 <button id="form-submit" type="button" class="contact-form__continue" onclick="
                 checkValidation()">
                     Fortsett
